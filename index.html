@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:rgb(196, 191, 57);"></body>
+<body>
+
+<h1>Kaju masala</h1><br>
+
+    enter the number of people to be served for <input type="number" id="n"><br>
+    <p id="p12"></p>
+    <p id="p13"></p>
+
+    <button onclick="recipe1(document.getElementById('n').value)">Recipe</button>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <p id="p4"></p>
+        <p id="p5"></p>
+        <p id="p6"></p>
+        <p id="p7"></p>
+        <p id="p8"></p>
+        <p id="p9"></p>
+        <p id="p10"></p>
+        <p id="p11"></p>
+
+   <script>
+        function recipe1(n){
+            let p = new Promise((resolve, reject) => {
+        if(n==0){
+            resolve('Success');
+        }else{
+            reject('failed')
+        }
+    }
+    )
+
+    p.then((messege) => {
+        document.getElementById("p12").innerHTML="please provide the amount which is greater than 0 to prepare its recipe";
+    }).catch((messege) =>{
+        document.getElementById("p1").innerHTML="firstly, heat a tsp of oil and add 1 tsp jeera," +n+" inch cinnamon stick and 1 bay leaf. saute till they turn aromatic";
+        document.getElementById("p2").innerHTML="further add "+Math.floor(n/2)+ "onion and saute well.";
+        document.getElementById("p3").innerHTML="add in prepared tomato onion paste and saute till the paste thickens.";
+        document.getElementById("p4").innerHTML="keeping the flame on low, add" + Math.floor(n/2)+ "tsp turmeric,"+n+" tsp red chilli powder,"+Math.floor(n/2)+"tsp coriander powder and ½ tsp salt.";
+        document.getElementById("p5").innerHTML="saute on low flame for a minute.";
+        document.getElementById("p6").innerHTML="now add "+n+" cup water and "+Math.floor(n/4)+"cup cream.";
+        document.getElementById("p7").innerHTML="stir continuously till the cream completely combines well.";
+        document.getElementById("p8").innerHTML="further add roasted cashews and stir well.";
+        document.getElementById("p9").innerHTML="cover and simmer for 5 minutes or till the gravy thickens slightly. ";
+        document.getElementById("p10").innerHTML="add in "+Math.floor(n/2)+" tsp garam masala, "+n+"tsp kasuri methi and"+ n+" tbsp coriander leaves.";
+        document.getElementById("p11").innerHTML="finally, serve kaju masala or cashew curry with roti";
+        })
+    }
+    </script>
+</body>
+</html>
